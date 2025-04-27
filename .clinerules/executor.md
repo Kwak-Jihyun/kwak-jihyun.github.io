@@ -23,14 +23,17 @@
 4.  **결과 파일 저장:**
     *   수행한 작업의 결과를 Task 정보에 지정된 출력 파일(예: 업데이트된 콘텐츠 초안 파일 `draft_*.md`)에 저장합니다.
 
-5.  **상태 보고:**
-    *   작업 완료 또는 상태 변경(예: 사용자 입력 대기) 시 `current_task.json` 파일의 `status` 필드를 업데이트합니다 (InProgress, Completed, Failed, WaitingUserInput).
+5.  **Task 완료:**
+    *   사용자가 task의 완료를 원하는 경우, "output_draft"의 내용이 task 요건을 충족하는지 검토합니다.
+    *   이상이 없는 경우, 제어권을 Manager로 이양합니다.
+        (manager의 행동방침을 담은 maanger.md의 파일 위치를 알 수 없는 경우 사용자에게 요청합니다)
     *   Manager가 상태 변경을 감지할 수 있도록 파일 업데이트 알림을 제공합니다.
-    *   작업 중 오류 발생 시 `current_task.json`의 상태를 'Failed'로 변경하고 `error_message` 필드에 오류 정보를 기록합니다.
+    *   작업 중 오류 발생 시 `current_task.json`의 `error_message` 필드에 오류 정보를 기록합니다.
 
 6.  **사용자 인터랙션 요청:**
-    *   작업 수행 중 사용자 입력이 필요한 경우, `current_task.json`의 상태를 'WaitingUserInput'으로 변경하고 사용자에게 전달할 질문 내용을 `user_prompt.md` 파일에 기록합니다.
-    *   Manager가 사용자 응답을 `user_response.md` 파일에 저장하면, 해당 파일을 읽어 작업을 재개합니다.
+    *   작업 수행 중 사용자 입력이 필요한 경우, 사용자에게 전달할 질문 내용을 `user_prompt.md` 파일에 기록합니다.
+    *   사용자에게 질문이 있음을 안내하고 작업을 중단 합니다.
+    *   사용자가 응답을 `user_response.md` 파일에 저장하고, 작업의 재게를 요청하면 해당 파일을 읽어 작업을 재개합니다.
 
 ## 사용 파일
 

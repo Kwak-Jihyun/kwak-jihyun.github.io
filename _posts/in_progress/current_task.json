@@ -1,0 +1,16 @@
+{
+  "id": "Phase 2-7",
+  "title": "주요 모듈 설명",
+  "description": "*   LLM 파이프라인 구축에 자주 사용되는 DSPy 모듈 몇 가지를 선택하여 설명합니다.\n*   `dspy.Predict` (가장 기본)\n*   `dspy.ChainOfThought` (복잡한 추론)\n*   `dspy.Retrieve` (검색 증강)\n*   각 모듈의 역할과 사용법을 간략히 설명합니다.",
+  "status": "InProgress",
+  "input_draft_path": "draft_Phase 2-6_after.md",
+  "output_draft_path": "draft_Phase 2-7_after.md",
+  "executor_instructions": {
+    "action": "write_section",
+    "section_title": "주요 모듈 설명",
+    "details": "LLM 파이프라인 구축에 자주 사용되는 DSPy 모듈(dspy.Predict, dspy.ChainOfThought, dspy.Retrieve)의 역할과 사용법을 간략히 설명하고 코드 예시를 포함하세요."
+  },
+  "user_prompt_path": null,
+  "user_response_path": null,
+  "error_message": null
+}
